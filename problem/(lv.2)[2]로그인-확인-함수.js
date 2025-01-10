@@ -10,7 +10,13 @@
  */
 
 // TODO: loginRequest 함수를 작성하세요.
-async function loginRequest(id, pw) {}
+async function loginRequest(id, pw) {
+  const checkId = (input) => input === "admin";
+  const checkPw = (input) => input === "1234";
+  const isId = await checkId(id);
+  const isPw = await checkPw(pw);
+  return isId && isPw ? "ok" : "fail";
+}
 
 // export를 수정하지 마세요.
 export { loginRequest };

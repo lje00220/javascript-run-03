@@ -20,7 +20,12 @@ async function fetchUsers() {
 }
 
 // TODO: getUsers 함수를 작성하세요.
-async function getUsers() {}
+async function getUsers() {
+  const userList = await fetchUsers();
+  const result = [];
+  userList.forEach((elem) => result.push(elem.name));
+  return result;
+}
 
 // export를 수정하지 마세요.
 export { getUsers };
